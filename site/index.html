@@ -10,7 +10,7 @@
 :root{--bg:#262624;--text:#e6e4da;--muted:#8f8d85;--border:#3a3936;--hover:#33322f;--accent:#e29776;--select:rgba(226,151,118,.26);--thumb:#46453f;--font:'Newsreader',Georgia,serif;--ui:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;color-scheme:dark}
 *{box-sizing:border-box}[hidden]{display:none!important}
 html,body{height:100%;margin:0}
-body{background:var(--bg);color:var(--text);font-family:var(--font);display:flex;overflow:hidden;height:100dvh}
+body{background:var(--bg);color:var(--text);font-family:var(--font);display:flex;overflow:hidden;height:100vh;height:100dvh}
 ::selection{background:var(--select)}
 *{scrollbar-width:thin;scrollbar-color:var(--thumb) transparent}
 button{font-family:var(--ui);font-size:13px;color:var(--text);background:transparent;border:1px solid var(--border);border-radius:4px;padding:6px 12px;cursor:pointer}
@@ -34,7 +34,7 @@ button:hover{background:var(--hover)}
 .g{padding-top:0}.g .av{visibility:hidden;height:1px}.g .h{display:none}
 .h{font-family:var(--ui);line-height:1.2;margin-bottom:2px}.n{font-weight:600;font-size:14px}
 time{font-size:11px;color:var(--muted);margin-left:8px}
-.t{font-size:17px;line-height:1.45;white-space:pre-wrap;overflow-wrap:anywhere}
+.t{font-size:17px;line-height:1.45;white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere}
 .e{height:1.5em;width:1.5em;vertical-align:-.4em}.big .e{height:52px;width:52px}
 .rp{font:12px var(--ui);color:var(--muted);border-left:2px solid var(--accent);padding-left:8px;margin:2px 0 4px;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .rb{align-self:start;opacity:0;font-size:11px;padding:3px 8px}.m:hover .rb,.rb:focus{opacity:1}
@@ -51,7 +51,7 @@ time{font-size:11px;color:var(--muted);margin-left:8px}
 #cnt{max-width:760px;margin:4px auto 0;font:11px var(--ui);color:var(--muted);height:14px;text-align:right}
 #pk{position:absolute;left:16px;right:16px;bottom:100%;max-width:520px;margin:0 auto;background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:8px;display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:2px;max-height:260px;overflow-y:auto}
 #pk button{border:0;padding:4px;display:grid;place-items:center}#pk img{width:34px;height:34px}
-#lim{position:absolute;inset:0;background:rgba(38,38,36,.96);z-index:9;display:grid;place-content:center;text-align:center;gap:12px;padding:24px}
+#lim{position:absolute;top:0;right:0;bottom:0;left:0;background:rgba(38,38,36,.96);z-index:9;display:grid;place-content:center;text-align:center;gap:12px;padding:24px}
 #lim h2{font-weight:500;font-size:26px;margin:0;color:var(--accent)}#lim p{margin:0;color:var(--muted);max-width:420px;line-height:1.5}
 #clock{font:600 22px var(--ui);color:var(--text)}
 @media(max-width:760px){#side{position:fixed;z-index:5;height:100%;top:0;left:0}#side.closed{margin-left:calc(-1*min(260px,80vw) - 2px)}}
@@ -86,7 +86,7 @@ button:active{transform:scale(.94)}
 .mod .n{color:#ff8f80}.mod .n::after{content:'MOD';font:600 9px var(--ui);letter-spacing:.08em;border:1px solid #ee7a6a;border-radius:3px;padding:1px 4px;margin-left:8px;vertical-align:1px}
 @keyframes warn{0%{background:rgba(238,122,106,.35)}}
 #row{align-items:flex-end}
-#box{min-height:44px;height:44px;line-height:24px;padding:9px 12px;overflow-y:hidden;max-height:min(200px,30dvh);transition:height .2s var(--ease)}
+#box{min-height:44px;height:44px;line-height:24px;padding:9px 12px;overflow-y:hidden;max-height:200px;max-height:min(200px,30dvh);transition:height .2s var(--ease)}
 #emo,#go{width:44px;height:44px;padding:0;display:grid;place-items:center;flex:none}
 #go{background:var(--accent);border:0;color:#1f1e1d}#go:hover{background:#eaa88b}
 #go:disabled{opacity:.3;cursor:default;background:var(--accent);transform:none}
@@ -103,24 +103,30 @@ button:active{transform:scale(.94)}
 .rx{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}.rx:empty{display:none}
 .chip{display:inline-flex;align-items:center;gap:5px;padding:2px 9px;border-radius:12px;font:12px var(--ui)}
 .chip img{width:18px;height:18px}.chip.me{border-color:var(--accent);background:var(--select)}
-#sheet{position:fixed;inset:0;z-index:20;display:flex;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
+#sheet{position:absolute;top:0;right:0;bottom:0;left:0;z-index:20;display:flex;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
 #sheet.on{opacity:1;visibility:visible}
 #sh{width:min(420px,100%);background:#2d2c2a;border:1px solid var(--border);border-radius:14px 14px 0 0;padding:12px 12px calc(12px + env(safe-area-inset-bottom));transform:translateY(40px);transition:transform .5s var(--ease)}
 #sheet.on #sh{transform:none}
 #qr{display:flex;justify-content:space-around;padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:6px}
 #qr button{border:0;padding:6px}#qr button:hover{transform:scale(1.15);background:transparent}#qr img{width:36px;height:36px}
 .mi{display:block;width:100%;text-align:left;border:0;padding:13px 12px;font-size:15px}
-#scrim{position:fixed;inset:0;z-index:4;background:rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s}
+#scrim{position:fixed;top:0;right:0;bottom:0;left:0;z-index:4;background:rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s}
 #scrim.on{opacity:1;visibility:visible}
 .e,.chip img,#pk img,#qr img{pointer-events:none;-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
-#qr{display:grid;grid-template-columns:repeat(auto-fill,minmax(46px,1fr));justify-content:normal;gap:2px;max-height:min(210px,32dvh);overflow-y:auto}
+#qr{display:grid;grid-template-columns:repeat(auto-fill,minmax(46px,1fr));justify-content:normal;gap:2px;max-height:210px;max-height:min(210px,32dvh);overflow-y:auto}
 .lbl{grid-column:1/-1;font:11px var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:6px 4px 2px}
+#pk{width:100%;max-width:760px;align-self:center;margin:0 auto}
+#sh{width:min(440px,100%)}
+.foot{margin-top:auto;padding-bottom:env(safe-area-inset-bottom)}
+html{-webkit-text-size-adjust:100%}button,.m{-webkit-tap-highlight-color:transparent}
+::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background:var(--thumb);border-radius:4px}::-webkit-scrollbar-track{background:transparent}
 </style>
 </head>
 <body>
 <aside id="side" aria-label="Menu">
   <section><h2>You are</h2><div class="you"><div class="av" id="meav"></div><b id="me">...</b></div></section>
-  <section><h2>Rooms</h2><div id="rooms"></div><p class="hint">We don't collect, sell or store your data.</p></section>
+  <section><h2>Rooms</h2><div id="rooms"></div></section>
+  <p class="hint foot">We don't collect, sell or store your data.</p>
 </aside>
 <div id="scrim"></div>
 <div id="main">
@@ -132,9 +138,9 @@ button:active{transform:scale(.94)}
     <div id="row"><textarea id="box" rows="1" maxlength="300" placeholder="Say something..." aria-label="Message"></textarea><button id="emo" type="button" aria-label="Emoji"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5q3.5 3 7 0"/><circle cx="9" cy="10" r=".7" fill="currentColor"/><circle cx="15" cy="10" r=".7" fill="currentColor"/></svg></button><button id="go" type="button" aria-label="Send" disabled><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></button></div>
     <div id="cnt"></div>
   </div>
+  <div id="sheet"><div id="sh"><div id="qr"></div><button class="mi" id="mrep" type="button">Reply</button><button class="mi" id="mcopy" type="button">Copy text</button></div></div>
   <div id="lim"><h2>We're out of room for today</h2><p>Servers are unavailable because we've reached our daily limit. Please come back tomorrow.</p><div id="clock"></div><p>Chat comes back at 00:00 UTC.</p></div>
 </div>
-<div id="sheet"><div id="sh"><div id="qr"></div><button class="mi" id="mrep" type="button">Reply</button><button class="mi" id="mcopy" type="button">Copy text</button></div></div>
 <script>
 'use strict';
 const WS_URL = 'wss://oac-worker.hymeys.workers.dev/ws';                 // leave empty for the fake chat. For the real chat: 'wss://oac-worker.YOURNAME.workers.dev/ws'
@@ -349,7 +355,11 @@ function closeMenu() { sheet.classList.remove('on'); sync(); }
 function toggleSide() { side.classList.toggle('closed'); sync(); }
 scrim.onclick = () => { side.classList.add('closed'); sync(); };
 $('#mrep').onclick = () => { const x = cur; closeMenu(); setReply(x); };
-$('#mcopy').onclick = () => { try { navigator.clipboard.writeText(cur.text); } catch (e) {} closeMenu(); };
+function copyText(t) {
+  const old = () => { const a = document.createElement('textarea'); a.value = t; a.style.cssText = 'position:fixed;opacity:0'; document.body.append(a); a.select(); try { document.execCommand('copy'); } catch (e) {} a.remove(); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).catch(old); else old();
+}
+$('#mcopy').onclick = () => { copyText(cur.text); closeMenu(); };
 sheet.addEventListener('click', e => { if (e.target === sheet) closeMenu(); });
 function drawRx(el, x) {
   el.textContent = '';
@@ -401,7 +411,7 @@ document.addEventListener('click', e => { if (!e.target.closest('#pk,#emo')) clo
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeMenu(); closePk(); } });
 let stick = true;
 log.addEventListener('scroll', () => { stick = log.scrollHeight - log.scrollTop - log.clientHeight < 90; });
-new ResizeObserver(() => { if (stick) log.scrollTop = log.scrollHeight; }).observe(log);
+if (window.ResizeObserver) new ResizeObserver(() => { if (stick) log.scrollTop = log.scrollHeight; }).observe(log);
 
 /* ---------- daily limit screen (preview it by adding #limit to the address) ---------- */
 function tick() { const d = new Date(), nx = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() + 1), s = Math.floor((nx - d) / 1000), p = x => String(x).padStart(2, '0'); $('#clock').textContent = `${p(s / 3600 | 0)}:${p(s % 3600 / 60 | 0)}:${p(s % 60)}`; }
@@ -410,6 +420,10 @@ setInterval(tick, 1000); tick();
 if (innerWidth < 760) $('#side').classList.add('closed');
 if (location.hash === '#limit') $('#lim').classList.add('on');
 drawRooms();
+if (window.visualViewport) {   // iOS Safari: keep the layout the size of the visible area when the keyboard opens
+  const fit = () => { if (visualViewport.scale > 1.01) return; document.body.style.height = visualViewport.height + 'px'; scrollTo(0, 0); };
+  visualViewport.addEventListener('resize', fit); visualViewport.addEventListener('scroll', fit); fit();
+}
 grow();
 T.start();
 </script>
