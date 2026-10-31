@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; connect-src https://oac-worker.hymeys.workers.dev; base-uri 'none'; form-action 'none'">
+<title>OAC admin</title><link rel="stylesheet" href="style.css"></head>
+<body class="adm"><h1>OAC admin</h1>
+<div id="login"><label>Admin key<input id="key" type="password" autocomplete="off"></label>
+<label>Authenticator code (6 digits)<input id="code" inputmode="numeric" maxlength="6" autocomplete="off"></label>
+<button id="go" type="button">Sign in</button></div>
+<div id="panel" hidden><p>Signed in. The session lasts one hour.</p>
+<label>Message to show when pausing (optional)<input id="msg" maxlength="200"></label>
+<button data-a="status" type="button">Status</button><button data-a="pause" type="button">Pause chat</button><button data-a="resume" type="button">Resume chat</button>
+<button data-a="clearbans" type="button">Clear all timeouts</button><button data-a="clear" type="button">Clear all chats</button>
+<h2>Chat as admin</h2><label>Your admin name (3 to 16 letters or numbers)<input id="aname" maxlength="16"></label>
+<button id="join" type="button">Open chat as admin</button><button id="out2" type="button">Sign out</button></div>
+<pre id="out"></pre>
+<details><summary>First time setup: authenticator code</summary>
+<p>This makes the key alone useless to anyone who finds it. Generate a secret here, add it to an authenticator app, and add the same secret as the Worker secret ADMIN_TOTP.</p>
+<button id="gen" type="button">Generate secret</button><pre id="sec"></pre></details>
+<script src="admin.js" defer></script></body></html>

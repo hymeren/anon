@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://challenges.cloudflare.com; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self' wss://oac-worker.hymeys.workers.dev https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; base-uri 'none'; form-action 'none'">
+<title>OAC · Online Anonymous Chat</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside id="side" aria-label="Menu">
+  <section><h2>You are</h2><div class="you"><div class="av" id="meav"></div><b id="me">...</b><button id="edit" type="button" class="sm">Edit</button></div>
+  <div id="prof" hidden><input id="pname" type="text" maxlength="16" placeholder="Name" autocomplete="off" spellcheck="false" aria-label="Name"><div class="crow"><input id="pcol" type="color" value="#e29776" aria-label="Color"><input id="phex" type="text" maxlength="7" placeholder="#e29776" autocomplete="off" spellcheck="false" aria-label="Color code"></div><p id="perr"></p><div class="prow"><button id="psave" type="button">Save</button><button id="pcancel" type="button">Cancel</button></div><p class="hint">3 to 16 letters or numbers. Your name stays yours while you keep coming back.</p></div></section>
+  <section><h2>Rooms</h2><div id="rooms"></div></section>
+  <section id="mutedSec" hidden><h2>Hidden</h2><div id="muted"></div></section>
+  <p class="hint foot">We don't collect, sell or store your data, and chats are deleted automatically after a while.</p>
+</aside>
+<div id="scrim"></div>
+<div id="main">
+  <header id="top"><b id="rname"># main</b><span id="state"></span><span class="oc"><span id="on">0</span> online</span><button id="menu" aria-label="Toggle menu">☰</button></header>
+  <div id="lw"><div id="log" role="log" aria-live="polite"></div><button id="new"></button></div>
+  <div id="rbar"><span id="rtxt"></span><button id="rx">Cancel</button></div>
+  <div id="pk"></div>
+  <div id="comp">
+    <div id="ac"></div>
+    <div id="row"><textarea id="box" rows="1" maxlength="300" placeholder="Say something..." aria-label="Message"></textarea><button id="emo" type="button" aria-label="Emoji"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5q3.5 3 7 0"/><circle cx="9" cy="10" r=".7" fill="currentColor"/><circle cx="15" cy="10" r=".7" fill="currentColor"/></svg></button><button id="go" type="button" aria-label="Send" disabled><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></button></div>
+    <div id="cnt"></div>
+  </div>
+  <div id="sheet"><div id="sh"><div id="qr"></div><button class="mi" id="mrep" type="button">Reply</button><button class="mi" id="mcopy" type="button">Copy text</button><button class="mi" id="mmute" type="button">Hide user</button><button class="mi" id="mreport" type="button">Report message</button><button class="mi" id="mdel" type="button" hidden>Delete message</button><button class="mi" id="mto" type="button" hidden>Time out user</button></div></div>
+  <div id="lim"><h2 id="lh">We're out of room for today</h2><p id="lp">Servers are unavailable because we've reached our daily limit. Please come back tomorrow.</p><div id="clock"></div><p id="lf">Chat comes back at 00:00 UTC.</p></div>
+</div>
+<div id="ts"></div>
+<script src="app.js" defer></script>
+</body>
+</html>
