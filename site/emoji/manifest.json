@@ -1,0 +1,165 @@
+{
+ "character": "Sock",
+ "emoji": [
+  {
+   "shortcode": "hi",
+   "file": "hi.svg",
+   "label": "Hi"
+  },
+  {
+   "shortcode": "lol",
+   "file": "lol.svg",
+   "label": "Laughing"
+  },
+  {
+   "shortcode": "cry",
+   "file": "cry.svg",
+   "label": "Single tear"
+  },
+  {
+   "shortcode": "love",
+   "file": "love.svg",
+   "label": "In love"
+  },
+  {
+   "shortcode": "cool",
+   "file": "cool.svg",
+   "label": "Cool"
+  },
+  {
+   "shortcode": "think",
+   "file": "think.svg",
+   "label": "Thinking"
+  },
+  {
+   "shortcode": "confused",
+   "file": "confused.svg",
+   "label": "Confused"
+  },
+  {
+   "shortcode": "angry",
+   "file": "angry.svg",
+   "label": "Angry"
+  },
+  {
+   "shortcode": "sleep",
+   "file": "sleep.svg",
+   "label": "Sleeping"
+  },
+  {
+   "shortcode": "shock",
+   "file": "shock.svg",
+   "label": "Shocked"
+  },
+  {
+   "shortcode": "smug",
+   "file": "smug.svg",
+   "label": "Smug"
+  },
+  {
+   "shortcode": "wink",
+   "file": "wink.svg",
+   "label": "Wink"
+  },
+  {
+   "shortcode": "blush",
+   "file": "blush.svg",
+   "label": "Blushing"
+  },
+  {
+   "shortcode": "facepalm",
+   "file": "facepalm.svg",
+   "label": "Facepalm"
+  },
+  {
+   "shortcode": "shrug",
+   "file": "shrug.svg",
+   "label": "Shrug"
+  },
+  {
+   "shortcode": "please",
+   "file": "please.svg",
+   "label": "Please"
+  },
+  {
+   "shortcode": "clap",
+   "file": "clap.svg",
+   "label": "Clap"
+  },
+  {
+   "shortcode": "thumbsup",
+   "file": "thumbsup.svg",
+   "label": "Thumbs up"
+  },
+  {
+   "shortcode": "coffee",
+   "file": "coffee.svg",
+   "label": "Coffee"
+  },
+  {
+   "shortcode": "flower",
+   "file": "flower.svg",
+   "label": "Flower"
+  },
+  {
+   "shortcode": "pizza",
+   "file": "pizza.svg",
+   "label": "Pizza"
+  },
+  {
+   "shortcode": "music",
+   "file": "music.svg",
+   "label": "Music"
+  },
+  {
+   "shortcode": "idea",
+   "file": "idea.svg",
+   "label": "Idea"
+  },
+  {
+   "shortcode": "party",
+   "file": "party.svg",
+   "label": "Party"
+  },
+  {
+   "shortcode": "gaming",
+   "file": "gaming.svg",
+   "label": "Gaming"
+  },
+  {
+   "shortcode": "reading",
+   "file": "reading.svg",
+   "label": "Reading"
+  },
+  {
+   "shortcode": "umbrella",
+   "file": "umbrella.svg",
+   "label": "Rainy"
+  },
+  {
+   "shortcode": "bye",
+   "file": "bye.svg",
+   "label": "Bye"
+  },
+  {
+   "shortcode": "dance",
+   "file": "dance.svg",
+   "label": "Dance"
+  },
+  {
+   "shortcode": "yes",
+   "file": "yes.svg",
+   "label": "Yes"
+  },
+  {
+   "shortcode": "nope",
+   "file": "nope.svg",
+   "label": "Nope"
+  },
+  {
+   "shortcode": "sock",
+   "file": "sock.svg",
+   "label": "Sock"
+  }
+ ]
+}
